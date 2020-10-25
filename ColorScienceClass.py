@@ -282,7 +282,7 @@ class ColorScienceClass:
         """
         temptspec = Blackbody.BlackbodySpectrum(AbsoluteTemp=self.CCT(spec))
         bk_spec = SpectrumClass( temptspec.wavelength_store(), 
-                                 temptspec.Intensity(temptspec.wavelength_store(), alpha=100.0), 
+                                 temptspec.Intensity_NormalizedByMax(temptspec.wavelength_store(), alpha=100.0), 
                                  wavelengthunitstr=temptspec.wavelengthunitstr)
         spec_TestSpec_List = [ self.__TestObjSpecList[jj]*spec  for jj in range(8)]
         bk_spec_TestSpec_List = [ self.__TestObjSpecList[jj]*bk_spec  for jj in range(8)]
